@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MoverNave : MonoBehaviour
 {
-
-    public float speed;
+    [SerializeField] Text Alerta;
+ 
     Vector3 pos1;
     private float moveSpeed = 5f;
 
-    [SerializeField] Text Tiempo;
-    [SerializeField] GameObject bola;
+ 
     void Start()
     {
        
@@ -31,6 +31,23 @@ public class MoverNave : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed * desplY);
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * desplX);
         transform.Translate(Vector3.up * Time.deltaTime * moveSpeed * desplY);
+       /*
+        void alerta()
+        {
+            if (desplX <=20f || >=20f)
+            {
+                Alerta.text = "Alerta"
+            }
+            if(desplY <= 20f || >= 20f)
+            {
+                Alerta.text = "Alerta"
+            }
 
+        }
+       */
     }
+   
+
 }
+
+    
