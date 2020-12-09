@@ -26,7 +26,8 @@ public class MoverNave : MonoBehaviour
     {
         float desplX = Input.GetAxis("Horizontal");
         float desplY = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * Time.deltaTime * moveSpeed * desplY);
+        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed * desplY);
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * desplX);
+        
     }
 }
