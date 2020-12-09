@@ -11,13 +11,14 @@ public class InstanciadorBolas : MonoBehaviour
     Vector3 RandomPos;
     void Start()
     {
-        bolasIniciales();
+       bolasIniciales();
+       StartCoroutine("InstanciadorEsferas");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void bolasIniciales()
@@ -30,6 +31,25 @@ public class InstanciadorBolas : MonoBehaviour
             float randomPosYAux = Random.Range(2f, 20f);
             pos = new Vector3(randomPosXAux, randomPosYAux, randomPosZAux);
             Instantiate(Bola, pos, Quaternion.identity);
+        }
+    }
+
+    void crearBolas()
+    {
+        float randomPosZAux = Random.Range(-20f, 20f);
+        float randomPosXAux = Random.Range(-20f, 20f);
+        float randomPosYAux = Random.Range(2f, 20f);
+        pos = new Vector3(randomPosXAux, randomPosYAux, randomPosZAux);
+        Instantiate(Bola, pos, Quaternion.identity);
+    }
+
+    IEnumerator InstanciadorEsferas()
+    {
+        for (; ; )
+        {
+
+            crearBolas();
+
         }
     }
 }
