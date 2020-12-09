@@ -1,0 +1,42 @@
+
+
+
+Ciclo: Animaciones 3D, Juegos y Entornos Interactivos			Curso: 2020/21
+Módulo: Desarrollo de Entornos Interactivos Multidispositivo		
+
+Nombre y apellidos: 	Laura Llamas Ruiz		         
+
+Escribe tu nombre y apellidos en la cabecera de este documento, y a continuación explica qué herramientas vistas a lo largo del curso, tanto de Unity como de programación, utilizarías para lograr los objetivos planteados en el ejercicio práctico
+
+IMPORTANTE: no te limites a enumerarlas, explica por qué usarías esas y no otras:
+
+Cada apartado valdrá 2 puntos, y la nota final representará el 25% de la nota final de la evaluación.
+
+Interactividad y gestión del movimiento
+Hay que crear una función para mover la nave, dentro se le establece mediante transform cual será su movimiento y después en  update se llamará para que se ejecute cada segundo.
+Para limitar el movimiento crearemos un if, y dentro añadimos la condición del movimiento hacia atrás y lo restringimos.
+
+
+Seguimiento del jugador con la cámara
+Creamos un serialzefield con la información de la nave y en el script de la cámara  en la función de update mediante transform y con un vector 3 para que lo siga en todos los ejes hacemos que la siga, además añadimos la separación que queremos porque sino estaría pegada.
+
+
+Creación de elementos (enemigos) de forma aleatoria y a intervalos
+Creamos un instanciador para instanciar el prefab y mediante una corrutina creamos un bucle infinito pero con una variable de tiempo para que cada segundo se instancie una en los parámetros que queramos. Para crear 20 iniciales en el método start creamos una función con un bucle limitado a 20.
+
+
+User Interface (tiempo transcurrido, nº de columnas y alerta)
+Mediante canvas asignamos texto. Primero el tiempo se asigna creando una corrutina con una variable de tipo int. Para el número de columnas comunicamos scripts y en la creación de estas añadimos un contador con una variable estatica para que todas tengan un valor conjunto y así según se creen se suma. Para la alerta  con la nave y mediante un if si pasa los limites establecidos lanzamos el texto, sino, no se ve.
+
+Colisiones
+Añadimos un collider tanto a la nave como a las bolas y marcamos is trigger, a la nave le asignamos el tag de player por ejemplo y creamos una función que cuando un  objeto de este tipo le choque se destruya.
+
+
+
+Entrega
+Cuando tengas completo el documento, expórtalo a pdf con este formato:
+Apellidos_nombre_ExTco1EV.pdf
+
+Guárdalo dentro del repositorio, y súbelo en un commit de GitHub, el cual se acompañará al Pull Request del final del examen.
+
+

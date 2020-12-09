@@ -7,6 +7,7 @@ public class InstanciadorBolas : MonoBehaviour
 {
     [SerializeField] GameObject Bola;
     Vector3 pos;
+    [SerializeField] Informacion BolasNumero;
 
     private float randomNumber;
     Vector3 RandomPos;
@@ -53,6 +54,7 @@ public class InstanciadorBolas : MonoBehaviour
             float interval = 1f;
 
             yield return new WaitForSeconds(interval);
+            //contaodr++
 
         }
 

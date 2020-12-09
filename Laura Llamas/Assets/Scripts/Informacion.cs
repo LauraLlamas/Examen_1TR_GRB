@@ -7,18 +7,22 @@ public class Informacion : MonoBehaviour
 {
 
     [SerializeField] Text Tiempo;
+    [SerializeField] Text Bolasnumero;
     public float speed;
+    [SerializeField] InstanciadorBolas Bola;
+    public static int contador = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Distancia");
+      Bola = FindObjectOfType<InstanciadorBolas>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Bolasnumero.text = "Bolas: " + contador;
     }
 
     IEnumerator Distancia()
