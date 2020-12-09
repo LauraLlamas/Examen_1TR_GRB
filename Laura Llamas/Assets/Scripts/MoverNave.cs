@@ -5,20 +5,28 @@ using UnityEngine;
 public class MoverNave : MonoBehaviour
 {
 
-    //Unir el prefab con el instanciador
-    [SerializeField] GameObject Nave;
+    
     Vector3 pos1;
-    
-    
+    private float moveSpeed = 5f;
+
+
     void Start()
     {
-        pos1 = new Vector3(0, 0, 0);
-        Instantiate(Nave, pos1, Quaternion.identity);
+       
     }
 
     
     void Update()
     {
-        
+        moverNave();
+    }
+
+
+    void moverNave()
+    {
+        float desplX = Input.GetAxis("Horizontal");
+        float desplY = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * Time.deltaTime * moveSpeed * desplY);
+        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * desplX);
     }
 }
