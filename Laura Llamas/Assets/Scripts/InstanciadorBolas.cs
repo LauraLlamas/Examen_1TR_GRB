@@ -8,13 +8,15 @@ public class InstanciadorBolas : MonoBehaviour
     [SerializeField] GameObject Bola;
     Vector3 pos;
     [SerializeField] Informacion BolasNumero;
+    [SerializeField] Informacion Bolasnumero;
 
     private float randomNumber;
     Vector3 RandomPos;
     void Start()
     {
-       bolasIniciales();
-       StartCoroutine("InstanciadorEsferas");
+        bolasIniciales();
+        StartCoroutine("InstanciadorEsferas");
+        Bolasnumero = FindObjectOfType<Informacion>();
     }
 
     // Update is called once per frame
@@ -54,9 +56,26 @@ public class InstanciadorBolas : MonoBehaviour
             float interval = 1f;
 
             yield return new WaitForSeconds(interval);
-            //contaodr++
+            // contaodor++
 
         }
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            print("Chocado");
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+
+            //contador++;
+            // print(contador);
+
+            //creador.numeroBalas--;
+
+        }
+    }
+
 }
