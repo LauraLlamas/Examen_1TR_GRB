@@ -49,7 +49,11 @@ public class InstanciadorBolas : MonoBehaviour
         {
 
             crearBolas();
+            float interval = 1f;
+
+            yield return new WaitForSeconds(interval);
 
         }
+
     }
 }
