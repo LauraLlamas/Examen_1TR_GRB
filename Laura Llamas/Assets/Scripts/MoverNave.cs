@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoverNave : MonoBehaviour
 {
 
-    
+    public float speed;
     Vector3 pos1;
     private float moveSpeed = 5f;
 
-
+    [SerializeField] Text Tiempo;
+    [SerializeField] GameObject bola;
     void Start()
     {
        
